@@ -25,7 +25,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello Build step'
-                sh "pwd"
                 dir('Repo_as_Submodule') {
                     cmakeBuild buildDir: 'build', installation: 'InSearchPath', sourceDir: '.'
                     dir('build') { 
