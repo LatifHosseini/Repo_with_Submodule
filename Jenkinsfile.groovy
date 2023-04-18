@@ -7,6 +7,7 @@ pipeline {
                 echo 'Hello World'
                 cleanWs()
                  checkout scm
+                sh 'git submodule update --init'
             }
         }
         
