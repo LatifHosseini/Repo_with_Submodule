@@ -6,8 +6,22 @@ pipeline {
             steps {
                 echo 'Hello World'
                 cleanWs()
-                 checkout scm
-                sh 'git submodule update --init'
+                // checkout scm $class: 'SurroundSCM'
+                checkout scm: [
+                     $class: 'GitSCM',
+                     branches: scm.branches,
+                     extensions: [
+                        [$class: 'SubmoduleOption',
+                        disableSubmodules: false,
+                        parentCredentials: false,
+                        recursiveSubmodules: true,
+                        reference: 'https://github.com/softwareschneiderei/ADS.git',
+                        shallow: true,
+                        trackingSubmodules: false]
+                    ],
+                    submoduleCfg: [],
+                    userRemoteConfigs: scm.userRemoteConfigs
+                ]
             }
         }
         
