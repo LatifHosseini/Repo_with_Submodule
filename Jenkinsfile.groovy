@@ -1,9 +1,5 @@
 pipeline {
     agent { label 'Agent ' }
-   // tools {
-        //maven 'mvn-default'
-        //  CMake
-   // }
 
     stages {
         stage('checkout') {
@@ -21,9 +17,6 @@ pipeline {
                  dir('build') { 
                  sh 'make'
                   }    
-               // sh 'chmod +x $(pwd)/ Bash_script.sh'
-               // sh '$(pwd)/Bash_script.sh'  
-                // sh '$(pwd)/Script_Yocto_SDV_EVAL.sh'
             }
         }
         
