@@ -15,7 +15,7 @@ pipeline {
                         disableSubmodules: false,
                         parentCredentials: false,
                         recursiveSubmodules: true,
-                        reference: 'https://github.com/softwareschneiderei/ADS.git',
+                        reference: 'https://github.com/LatifHosseini/Repo_with_Submodule.git',
                         shallow: true,
                         trackingSubmodules: false]
                     ],
