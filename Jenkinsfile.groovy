@@ -15,7 +15,7 @@ pipeline {
                         recursiveSubmodules: true,
                         reference: 'https://github.com/LatifHosseini/Repo_with_Submodule.git',
                         shallow: true,
-                        trackingSubmodules: false]
+                        trackingSubmodules: true]
                     ],
                     submoduleCfg: [],
                     userRemoteConfigs: scm.userRemoteConfigs
